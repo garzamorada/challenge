@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#content {
+    max-width: 1440px;
+    background-color: white;
+}
