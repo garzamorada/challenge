@@ -72,6 +72,7 @@ menu ul {
 
 menu {
     float: right;
+    margin-right: 20px;
 }
 
 .material-symbols-outlined {
