@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -14,22 +19,33 @@ body {
 
 header {
     width: 100%;
-    height: 10vh;
+    min-height: 10vh;
     background: #30343F;
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 footer {
     width: 100%;
-    height: 14vh;
+    height: 30vh;
     background: #30343F;
     overflow: hidden;
 }
 
 main {
     background-color: white;
-    min-height: 50vw;
+    min-height: 60vh;
     width: 100%;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    border: 0;
+    border-radius: 50px;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -41,8 +57,11 @@ main {
 
 /**************************************************/
 
-#logotipo {
-    position: relative;
+header #logotipo {
+    flex: 50%;
+}
+
+header #logotipo img {
     margin-left: 6vw;
     margin-top: 2vh;
     margin-bottom: 2vh;
@@ -50,11 +69,10 @@ main {
     width: auto;
 }
 
-menu li {
-    /*font-family: 'Inter', sans-serif;*/
+header menu li {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: calc(0.5rem + ((1vw + 1vh)/2));
     color: white;
     display: inline-block;
     height: 6vh;
@@ -62,21 +80,196 @@ menu li {
     margin-right: 49px;
 }
 
-menu ul {
+header menu ul {
+    text-align: right;
+    display: inline-flex;
+    text-align: right;
+    flex-direction: column;
+    flex-wrap: wrap;
     list-style: none;
     margin-top: 2vh;
     margin-bottom: 2vh;
+    margin-right: 6vw;
+    margin-left: 6vw;
     height: 6vh;
     vertical-align: middle;
 }
 
-menu {
-    float: right;
-    margin-right: 20px;
+header menu {
+    flex: 50%;
+    display: inline-block;
 }
 
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
     vertical-align: middle;
     display: inline-block;
+}
+
+
+/**************************************************/
+
+
+/*                     footer                     */
+
+
+/**************************************************/
+
+footer menu li {
+    /*font-family: 'Inter', sans-serif;*/
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: calc(0.5rem + ((1vw + 1vh)/2));
+    color: white;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+footer menu ul {
+    list-style: none;
+    vertical-align: middle;
+}
+
+footer menu {
+    margin-top: 6vh;
+    margin-left: 6vw;
+    height: 17vh;
+    display: inline-block;
+}
+
+footer #isotipo {
+    margin-top: 7vh;
+    margin-right: 110px;
+    float: right;
+    height: 16vh;
+    width: auto;
+}
+
+footer #copyright {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: calc(0.5rem + ((1vw + 1vh)/2));
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    height: 7vh;
+    margin-bottom: 10px;
+}
+
+
+/**************************************************/
+
+
+/*                    main                        */
+
+
+/**************************************************/
+
+main #banner {
+    width: 100%;
+    min-height: 35vh;
+    background-image: url('../multimedia/funkos-banner.webp');
+    background-position-y: bottom;
+    background-position-x: center;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    overflow: hidden;
+}
+
+main #banner h1,
+main #banner p,
+main #banner button {
+    margin-left: 6vw;
+}
+
+main #banner h1 {
+    color: white;
+    margin-top: 6vh;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+}
+
+main #banner p {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+main #banner button {
+    margin-top: 6vh;
+    width: 211px;
+    height: 47px;
+    padding: 5px;
+    vertical-align: middle;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+
+main #destacados {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    overflow: hidden;
+}
+
+main #destacados article {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main #destacados picture {
+    flex: 50%;
+}
+
+main #destacados .descripcion {
+    flex: 50%;
+    margin-top: calc((8vh + 8vw)/2);
+}
+
+main #destacados .descripcion h2 {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 46px;
+    line-height: 54px;
+    text-transform: uppercase;
+}
+
+main #destacados .descripcion p {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+main #destacados hr {
+    border: 3px solid #FF3333;
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+
+main #destacados button {
+    width: 292px;
+    height: 65px;
+    background: #30343F;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+main #destacados .left {
+    flex-direction: row;
+}
+
+main #destacados .right {
+    flex-direction: row-reverse;
+}
+
+main #destacados img {
+    width: 95%;
+    height: auto;
 }
