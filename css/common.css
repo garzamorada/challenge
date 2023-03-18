@@ -261,8 +261,10 @@ main #destacados .descripcion p {
     line-height: 28px;
 }
 
-main #destacados hr {
-    border: 3px solid #FF3333;
+main #destacados #hr {
+    border: 0;
+    border-top: 3px #FF3333 solid;
+    color: #FF3333;
     margin-top: 28px;
     margin-bottom: 28px;
 }
@@ -294,24 +296,76 @@ main #ultimos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-content: space-around;
+    font-family: 'Inter', sans-serif;
 }
 
 #ultimos h1 {
     flex: 100%;
+    font-weight: 700;
+    font-size: 46px;
     padding-left: 6vw;
     padding-right: 6vw;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
 }
 
 main #ultimos article {
     flex: 33%;
 }
 
-#ultimos figure {
-    margin: 6vw;
+#ultimos figure img {
+    /*height: calc(100px + (25vh+25vw)/2);*/
+    width: 100%;
+    height: auto;
 }
 
-#ultimos figure img {
-    height: calc(100px + (25vh+25vw)/2);
+#ultimos .nuevo {
+    display: inline-block;
+    background-color: #FF3333;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 14px;
+    width: 96px;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: -60px;
+    margin-right: 1vw;
+}
+
+#ultimos article {
+    text-align: right;
+}
+
+#ultimos article figcaption {
+    text-align: left;
+    margin-left: 6vw;
+    margin-right: 1vw;
+}
+
+#ultimos .seccion {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#ultimos h2 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+#ultimos h3 {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    margin-bottom: 14px;
+}
+
+#ultimos h4 {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #1D84B5;
 }
