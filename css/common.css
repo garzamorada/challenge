@@ -86,6 +86,11 @@ header menu li {
     margin-right: 49px;
 }
 
+header menu li img {
+    width: auto;
+    height: 1rem;
+}
+
 header menu ul {
     text-align: right;
     display: inline-flex;
@@ -126,7 +131,7 @@ footer menu li {
     flex: 100%;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
-    font-size: calc(0.5rem + ((1vw + 1vh)/2));
+    font-size: 1rem;
     color: white;
     vertical-align: middle;
     margin-bottom: 10px;
@@ -307,7 +312,7 @@ main #ultimos {
 #ultimos h1 {
     flex: 100%;
     font-weight: 700;
-    font-size: 46px;
+    font-size: 2.5rem;
     padding-left: 6vw;
     padding-right: 6vw;
 }
@@ -327,7 +332,7 @@ main #ultimos article {
     background-color: #FF3333;
     color: #FFFFFF;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1rem;
     width: 96px;
     padding: 8px;
     text-align: center;
@@ -347,12 +352,12 @@ main #ultimos article {
 }
 
 #ultimos .seccion {
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: 500;
 }
 
 #ultimos h2 {
-    font-size: 18px;
+    font-size: 1rem;
     line-height: 22px;
     font-weight: 700;
     margin-top: 14px;
@@ -360,16 +365,58 @@ main #ultimos article {
 }
 
 #ultimos h3 {
-    font-size: 16px;
+    font-size: 0.8rem;
     line-height: 19px;
     font-weight: 400;
     margin-bottom: 14px;
 }
 
 #ultimos h4 {
-    font-size: 12px;
+    font-size: 0.6rem;
     line-height: 14px;
     font-weight: 700;
     margin-bottom: 14px;
     color: #1D84B5;
+}
+
+@media only screen and (max-width: 600px) {
+    main #destacados picture {
+        flex: 100%;
+    }
+    main #destacados .descripcion {
+        flex: 100%;
+    }
+    main #ultimos article {
+        flex: 100%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    main #destacados picture {
+        flex: 50%;
+    }
+    main #destacados .descripcion {
+        flex: 50%;
+    }
+    main #ultimos article {
+        flex: 33%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    main #destacados picture {
+        flex: 50%;
+    }
+    main #destacados .descripcion {
+        flex: 50%;
+    }
+    main #ultimos article {
+        flex: 25%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    html {
+        font-size: 80%;
+    }
 }
