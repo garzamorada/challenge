@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html {
+    font-size: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -74,7 +78,7 @@ header #logotipo img {
 header menu li {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
-    font-size: calc(0.5rem + ((1vw + 1vh)/2));
+    font-size: 1rem;
     color: white;
     display: inline-block;
     height: 6vh;
@@ -162,7 +166,7 @@ footer #copyright {
     flex: 100%;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
-    font-size: calc(0.5rem + ((1vw + 1vh)/2));
+    font-size: 1rem;
     color: white;
     vertical-align: middle;
     text-align: center;
@@ -201,14 +205,14 @@ main #banner h1 {
     margin-top: 6vh;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    font-size: 38px;
+    font-size: 2rem;
 }
 
 main #banner p {
     color: white;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 main #banner button {
@@ -219,7 +223,7 @@ main #banner button {
     vertical-align: middle;
     text-align: center;
     color: black;
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 
 main #destacados {
@@ -248,7 +252,7 @@ main #destacados .descripcion h2 {
     color: black;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
-    font-size: 46px;
+    font-size: 2.5rem;
     line-height: 54px;
     text-transform: uppercase;
 }
@@ -257,7 +261,7 @@ main #destacados .descripcion p {
     color: black;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 28px;
 }
 
@@ -271,7 +275,7 @@ main #destacados button {
     width: 292px;
     height: 65px;
     background: #30343F;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #FFFFFF;
 }
 
