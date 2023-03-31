@@ -437,6 +437,12 @@ main #ultimos {
     min-height: 6vh;
     padding-left: 10px;
     padding-right: 10px;
+    width: 100%;
+}
+
+#menu li:hover,
+#menu li:active {
+    background-color: rgba(255, 255, 255, 10%);
 }
 
 #menu li img {
@@ -594,6 +600,9 @@ label .botonMenu span:nth-child(3) {
         height: 100%;
         overflow: hidden;
         align-items: center;
+    }
+    header #menu li {
+        width: auto;
     }
 }
 
