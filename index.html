@@ -19,20 +19,30 @@
             <div id="logotipo">
                 <img alt="logotipo" src="multimedia/branding/logo_light_horizontal.svg">
             </div>
-            <menu>
+            <input type="checkbox" id="switch" chequed>
+            <label for="switch">
+                    <div class="botonMenu">             
+                       <span></span>              
+                       <span></span>              
+                       <span></span>              
+                    </div>              
+                 </label>
+            <nav id="menu">
                 <ul>
                     <li>SHOP <span class="material-symbols-outlined">expand_more</span></li>
                     <li>CONTACTO</li>
                     <li>LOGIN</li>
                     <li><img id="carrito" alt="carrito" src="multimedia/icons/cart-icon.svg"></li>
                 </ul>
-            </menu>
+            </nav>
         </header>
         <main>
             <div id="banner">
-                <h1>Nuevos Ingresos</h1>
-                <p>Descubrí el próximo Funko Pop de tu colección</p>
-                <button>SHOP</button>
+                <div id="contenido">
+                    <h1>Nuevos Ingresos</h1>
+                    <p>Descubrí el próximo Funko Pop de tu colección</p>
+                    <button>SHOP</button>
+                </div>
             </div>
             <section id="destacados">
                 <article class="right">
@@ -40,7 +50,7 @@
                     <div class="descripcion">
                         <h2>Star Wars & The Mandalorian</h2>
                         <p>Disfruta de una saga que sigue agregando personajes a su colección.</p>
-                        <div id="hr"></div>
+                        <div class="hr"></div>
                         <button>VER COLECCIÓN</button>
                     </div>
                 </article>
@@ -49,7 +59,7 @@
                     <div class="descripcion">
                         <h2>POKEMON INDIGO</h2>
                         <p>Atrapa todos los que puedas y disfruta de una colección llena de amigos.</p>
-                        <div id="hr"></div>
+                        <div class="hr"></div>
                         <button>VER COLECCIÓN</button>
                     </div>
                 </article>
@@ -58,7 +68,7 @@
                     <div class="descripcion">
                         <h2>HARRY POTTER</h2>
                         <p>Revive los recuerdos de una saga llena de magia y encanto.</p>
-                        <div id="hr"></div>
+                        <div class="hr"></div>
                         <button>VER COLECCIÓN</button>
                     </div>
                 </article>
@@ -67,8 +77,8 @@
                 <h1>ÚLTIMOS LANZAMIENTOS</h1>
                 <article>
                     <figure>
-                        <img src="multimedia/star-wars/trooper-1.webp">
                         <span class="nuevo">NUEVO</span>
+                        <img src="multimedia/star-wars/trooper-1.webp">
                         <figcaption>
                             <span class="seccion">STAR WARS</span>
                             <h2>STORMTROOPER LIGHTSABER</h2>
@@ -79,8 +89,8 @@
                 </article>
                 <article>
                     <figure>
-                        <img src="multimedia/pokemon/pidgeotto-1.webp">
                         <span class="nuevo">NUEVO</span>
+                        <img src="multimedia/pokemon/pidgeotto-1.webp">
                         <figcaption>
                             <span class="seccion">POKEMON</span>
                             <h2>PIDGEOTTO</h2>
@@ -91,8 +101,8 @@
                 </article>
                 <article>
                     <figure>
-                        <img src="multimedia/harry-potter/luna-1.webp">
                         <span class="nuevo">NUEVO</span>
+                        <img src="multimedia/harry-potter/luna-1.webp">
                         <figcaption>
                             <span class="seccion">HARRY POTTER</span>
                             <h2>LUNA LOVEGOOD LION MASK</h2>
@@ -104,14 +114,14 @@
             </section>
         </main>
         <footer>
-            <menu>
+            <nav>
                 <ul>
                     <li>SHOP</li>
                     <li>REGISTRARSE</li>
                     <li>INGRESAR</li>
                     <li>CONTACTO</li>
                 </ul>
-            </menu>
+            </nav>
             <div id="isotipo"><img alt="isotipo" src="multimedia/branding/isotype.svg"></div>
             <div id="copyright">All rights reserved 2022 - Funkoshop &copy;</div>
         </footer>

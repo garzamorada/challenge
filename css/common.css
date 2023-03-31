@@ -1,6 +1,28 @@
 * {
     margin: 0;
     padding: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    /*border: 1px dotted greenyellow;*/
+}
+
+:root {
+    --margin-left: 40px;
+    --margin-right: 40px;
+    --margin-top: 40px;
+    --padding-left: 40px;
+    --padding-right: 40px;
+    --padding-top: 40px;
+    --max-font: 24px;
+    --min-font: 10px;
+    --clamp-font: clamp(var(--min-font), 1vw, var(--max-font));
+    --max-img: 500px;
+    --min-img: 200px;
+    --clamp-img: clamp(var(--min-img), 30vw, var(--max-img));
 }
 
 html {
@@ -12,7 +34,7 @@ body {
     padding: 0;
     background-color: lightgray;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 #content {
@@ -22,19 +44,30 @@ body {
 }
 
 header {
-    width: 100%;
+    --ancho-logo-img: clamp(200px, 50vw, 350px);
+    --ancho-logo: calc(var(--ancho-logo-img)+10px);
     min-height: 10vh;
     background: #30343F;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-areas: "logo boton checkbox menu-up" "menu menu menu menu";
+    grid-template-columns: var(--ancho-logo) 0 auto auto;
+    grid-template-rows: 80px auto;
+    align-content: stretch;
+    align-items: stretch;
+    justify-items: stretch;
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
 }
 
 footer {
-    width: 100%;
+    padding-top: var(--padding-top);
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
     min-height: 30vh;
     background: #30343F;
     display: flex;
+    justify-content: space-between;
+    align-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
 }
@@ -64,51 +97,19 @@ button {
 /**************************************************/
 
 header #logotipo {
-    flex: 50%;
+    grid-area: logo;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    margin-right: 10px;
 }
 
 header #logotipo img {
-    margin-left: 6vw;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    height: 6vh;
-    width: auto;
-}
-
-header menu li {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    color: white;
-    display: inline-block;
-    height: 6vh;
-    vertical-align: middle;
-    margin-right: 49px;
-}
-
-header menu li img {
-    width: auto;
-    height: 1rem;
-}
-
-header menu ul {
-    text-align: right;
-    display: inline-flex;
-    text-align: right;
-    flex-direction: column;
-    flex-wrap: wrap;
-    list-style: none;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-right: 6vw;
-    margin-left: 6vw;
-    height: 6vh;
-    vertical-align: middle;
-}
-
-header menu {
-    flex: 50%;
-    display: inline-block;
+    width: var(--ancho-logo-img);
+    height: auto;
 }
 
 .material-symbols-outlined {
@@ -126,7 +127,7 @@ header menu {
 
 /**************************************************/
 
-footer menu li {
+footer nav li {
     display: inline-block;
     flex: 100%;
     font-family: 'Raleway', sans-serif;
@@ -137,38 +138,40 @@ footer menu li {
     margin-bottom: 10px;
 }
 
-footer menu ul {
-    margin-top: 6vh;
-    margin-left: 6vw;
+footer nav ul {
     list-style: none;
     display: inline-flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-footer menu {
-    flex: 50%;
+footer nav {
     height: 17vh;
-    display: inline-block;
-    max-width: 50%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    min-width: 49%;
 }
 
 footer #isotipo {
-    flex: 50%;
-    display: inline-block;
-    max-width: 50%;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: right;
+    min-width: 49%;
 }
 
 footer #isotipo img {
-    margin-top: 7vh;
-    margin-right: 110px;
     height: calc(50px + (15vh+15vw)/2);
     width: auto;
 }
 
 footer #copyright {
-    flex: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    min-width: 100%;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 1rem;
@@ -189,25 +192,25 @@ footer #copyright {
 /**************************************************/
 
 main #banner {
-    width: 100%;
-    min-height: 35vh;
     background-image: url('../multimedia/funkos-banner.webp');
     background-position-y: bottom;
     background-position-x: center;
     background-size: cover;
-    backdrop-filter: blur(3px);
     overflow: hidden;
 }
 
-main #banner h1,
-main #banner p,
-main #banner button {
-    margin-left: 6vw;
+main #banner #contenido {
+    padding-top: var(--padding-top);
+    width: 100%;
+    min-height: 35vh;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 20%);
+    padding-right: var(--padding-right);
+    padding-left: var(--padding-left);
 }
 
 main #banner h1 {
     color: white;
-    margin-top: 6vh;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 2rem;
@@ -234,23 +237,28 @@ main #banner button {
 main #destacados {
     display: flex;
     flex-direction: column;
-    margin-left: 6vw;
-    margin-right: 6vw;
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
     overflow: hidden;
 }
 
 main #destacados article {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: stretch;
 }
 
 main #destacados picture {
-    flex: 50%;
+    display: flex;
+    width: 49%;
+    align-content: center;
+    align-items: center;
 }
 
 main #destacados .descripcion {
-    flex: 50%;
-    margin-top: calc((8vh + 8vw)/2);
+    margin-top: var(--margin-top);
+    width: 49%;
 }
 
 main #destacados .descripcion h2 {
@@ -270,12 +278,13 @@ main #destacados .descripcion p {
     line-height: 28px;
 }
 
-main #destacados #hr {
+main #destacados .hr {
     border: 0;
     border-top: 3px #FF3333 solid;
     color: #FF3333;
     margin-top: 28px;
     margin-bottom: 28px;
+    width: 95%;
 }
 
 main #destacados button {
@@ -295,34 +304,32 @@ main #destacados .right {
 }
 
 main #destacados img {
-    width: 95%;
+    /*max-width: 400px;
+    width: 95%;*/
+    width: var(--clamp-img);
     height: auto;
 }
 
 main #ultimos {
     margin-top: 6vh;
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-around;
+    align-items: stretch;
     font-family: 'Inter', sans-serif;
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
 }
 
 #ultimos h1 {
-    flex: 100%;
+    width: 100%;
     font-weight: 700;
     font-size: 2.5rem;
-    padding-left: 6vw;
-    padding-right: 6vw;
-}
-
-main #ultimos article {
-    flex: 33%;
 }
 
 #ultimos figure img {
-    /*height: calc(100px + (25vh+25vw)/2);*/
+    max-width: 400px;
     width: 100%;
     height: auto;
 }
@@ -332,22 +339,28 @@ main #ultimos article {
     background-color: #FF3333;
     color: #FFFFFF;
     font-weight: 500;
-    font-size: 1rem;
-    width: 96px;
+    font-size: 1em;
+    width: 20%;
     padding: 8px;
     text-align: center;
     vertical-align: middle;
-    margin-top: -190%;
     margin-right: 1vw;
+    position: relative;
+    bottom: -7%;
 }
 
 #ultimos article {
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: stretch;
+    flex: 1;
 }
 
 #ultimos article figcaption {
     text-align: left;
-    margin-left: 6vw;
+    margin-left: 1vw;
     margin-right: 1vw;
 }
 
@@ -364,14 +377,16 @@ main #ultimos article {
     margin-bottom: 14px;
 }
 
-#ultimos h3 {
+#ultimos .precio {
+    display: block;
     font-size: 0.8rem;
     line-height: 19px;
     font-weight: 400;
     margin-bottom: 14px;
 }
 
-#ultimos h4 {
+#ultimos .cuotas {
+    display: block;
     font-size: 0.6rem;
     line-height: 14px;
     font-weight: 700;
@@ -379,7 +394,154 @@ main #ultimos article {
     color: #1D84B5;
 }
 
-@media only screen and (max-width: 600px) {
+
+/*****************************************************/
+
+
+/*                      menu                         */
+
+
+/*****************************************************/
+
+#menu {
+    height: 300px;
+    grid-area: menu;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    align-self: flex-start;
+    align-content: flex-start;
+    justify-content: left;
+    transition: height 500ms;
+}
+
+#menu ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+#menu li {
+    display: flex;
+    align-self: left;
+    justify-self: left;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    min-height: 6vh;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#menu li img {
+    width: auto;
+    height: 1rem;
+}
+
+#switch:checked~#menu {
+    /*display: none;*/
+    height: 0;
+    overflow: hidden;
+}
+
+#switch {
+    grid-area: checkbox;
+    display: none;
+}
+
+header .botonMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 20px;
+    height: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #666;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+header .botonMenu span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: white;
+    margin-top: 4px;
+    transition: rotate 0.5s, display 1ms;
+}
+
+header .botonMenu span:first-of-type {
+    margin-top: 2px;
+}
+
+header label {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: right;
+    grid-area: boton;
+    cursor: pointer;
+}
+
+
+/*#switch:checked~label .botonMenu {
+    transform: rotate(90deg);
+}*/
+
+
+/*#switch:checked~label .botonMenu span {
+    display: none;
+}*/
+
+label .botonMenu span:nth-child(2) {
+    display: none;
+}
+
+label .botonMenu span:nth-child(1) {
+    rotate: 45deg;
+    position: relative;
+    bottom: -3px
+}
+
+label .botonMenu span:nth-child(3) {
+    rotate: -45deg;
+    position: relative;
+    top: -3px;
+}
+
+#switch:checked~label .botonMenu span:nth-child(2) {
+    display: block;
+}
+
+#switch:checked~label .botonMenu span:nth-child(1) {
+    rotate: 0deg;
+    position: relative;
+    bottom: 0;
+}
+
+#switch:checked~label .botonMenu span:nth-child(3) {
+    rotate: 0deg;
+    position: relative;
+    top: 0;
+}
+
+#menu ul {
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 450px) {
     main #destacados picture {
         flex: 100%;
     }
@@ -387,31 +549,58 @@ main #ultimos article {
         flex: 100%;
     }
     main #ultimos article {
-        flex: 100%;
+        flex: 1 100%;
+    }
+}
+
+@media only screen and (min-width: 451px) {
+    main #ultimos article {
+        font-size: 50%;
+        flex: 1 100px;
     }
 }
 
 @media only screen and (min-width: 601px) {
+    header {
+        grid-template-rows: 120px auto;
+    }
     main #destacados picture {
-        flex: 50%;
+        flex: 49%;
     }
     main #destacados .descripcion {
-        flex: 50%;
+        flex: 49%;
     }
     main #ultimos article {
-        flex: 33%;
+        font-size: 70%;
+        flex: 1 180px;
     }
 }
 
-@media only screen and (min-width: 1200px) {
-    main #destacados picture {
-        flex: 50%;
+@media only screen and (min-width: 800px) {
+    header {
+        grid-template-rows: 120px 0;
     }
-    main #destacados .descripcion {
-        flex: 50%;
+    header #menu {
+        grid-area: menu-up;
     }
+    header #menu ul {
+        flex-direction: row;
+    }
+    header label {
+        display: none;
+    }
+    header #menu,
+    #switch:checked~#menu {
+        height: 100%;
+        overflow: hidden;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
     main #ultimos article {
-        flex: 25%;
+        font-size: 100%;
+        flex: 1 300px;
     }
 }
 
