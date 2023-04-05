@@ -1,56 +1,23 @@
-/*function derecha() {
-    const diapositivas = document.getElementsByClassName('diapositiva');
-    let cantDiapisitivas = diapositivas.length;
-    for (let i = 0; i < diapositivas.length; i++) {
-        diapositiva = diapositivas[i];
-        let elementStyle = window.getComputedStyle(diapositiva);
-        let order = elementStyle.getPropertyValue('order')
-        order = parseInt(order, 10);
-        order = order - 1
-        if (order == 0) { order = cantDiapisitivas; }
-        diapositiva.style.setProperty('order', order);
-    }
+function izquierda(order, cantDiapositivas) {
+    order = order + 1;
+    if (order > cantDiapositivas) { order = 1; }
+    return order
 }
 
-function izquierda() {
-    const diapositivas = document.getElementsByClassName('diapositiva');
-    console.log(diapositivas);
-    let cantDiapisitivas = diapositivas.length;
-    for (let i = 0; i < diapositivas.length; i++) {
-        diapositiva = diapositivas[i];
-        let elementStyle = window.getComputedStyle(diapositiva);
-        let order = elementStyle.getPropertyValue('order')
-        order = parseInt(order, 10);
-        order = order + 1
-        if (order > cantDiapisitivas) { order = 1; }
-        diapositiva.style.setProperty('order', order);
-    }
-}*/
-
-
-function derecha() {
-    const diapositivas = document.getElementsByClassName('diapositiva');
-    let cantDiapisitivas = diapositivas.length;
-    diapositivas.forEach(diapositiva => {
-        let elementStyle = window.getComputedStyle(diapositiva);
-        let order = elementStyle.getPropertyValue('order')
-        order = parseInt(order, 10);
-        order = order - 1
-        if (order == 0) { order = cantDiapisitivas; }
-        diapositiva.style.setProperty('order', order);
-    });
+function derecha(order, cantDiapositivas) {
+    order = order - 1;
+    if (order == 0) { order = cantDiapositivas; }
+    return order
 }
 
-function izquierda() {
+function mueveCarrousel(direccion) {
     const diapositivas = document.getElementsByClassName('diapositiva');
-    console.log(diapositivas);
-    let cantDiapisitivas = diapositivas.length;
-    diapositivas.forEach(diapositiva => {
+    let cantDiapositivas = diapositivas.length;
+    for (diapositiva of diapositivas) {
         let elementStyle = window.getComputedStyle(diapositiva);
         let order = elementStyle.getPropertyValue('order')
         order = parseInt(order, 10);
-        order = order + 1
-        if (order > cantDiapisitivas) { order = 1; }
+        order = eval(direccion + '(' + order + ',' + cantDiapositivas + ')');
         diapositiva.style.setProperty('order', order);
-    });
+    };
 }
