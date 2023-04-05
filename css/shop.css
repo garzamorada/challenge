@@ -1,0 +1,127 @@
+main {
+    display: grid;
+    grid-template-areas: "aside shop" ". control";
+    grid-template-columns: 30% 70%;
+}
+
+aside {
+    grid-area: aside;
+}
+
+#control_shop_items {
+    grid-area: control;
+    justify-self: center;
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#control_shop_items button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #DFE3E8;
+    background-color: #FFFFFF;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#control_shop_items .flecha {
+    background-color: #DFE3E8;
+}
+
+#control_shop_items .actual {
+    border-color: #FF3333;
+}
+
+#control_shop_items button:hover {
+    border-color: #FF3333;
+}
+
+#shop {
+    grid-area: shop;
+    display: grid;
+    grid-template-columns: 33% 33% auto;
+}
+
+#shop {
+    font-family: 'Inter', sans-serif;
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+}
+
+#shop figure img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+
+#shop article {
+    flex: 1 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: stretch;
+    scroll-snap-align: start;
+}
+
+#shop article .nuevo {
+    display: inline-block;
+    align-self: flex-end;
+    margin-right: var(--margin-right);
+    background-color: #FF3333;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 1em;
+    max-width: 30%;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 1vw;
+    position: relative;
+    bottom: -7%;
+}
+
+#shop article figcaption {
+    width: 100%;
+    max-width: 400px;
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+    text-align: left;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+#shop .seccion {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+#shop h2 {
+    font-size: 1rem;
+    line-height: 22px;
+    font-weight: 700;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+#shop .precio {
+    display: block;
+    font-size: 0.8rem;
+    line-height: 19px;
+    font-weight: 400;
+    margin-bottom: 14px;
+}
+
+#shop .cuotas {
+    display: block;
+    font-size: 0.6rem;
+    line-height: 14px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #1D84B5;
+}

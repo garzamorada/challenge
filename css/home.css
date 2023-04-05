@@ -1,0 +1,159 @@
+    /********************************************* MAIN *********************************************/
+    
+    #banner {
+        background-image: url('../multimedia/funkos-banner.webp');
+        background-position-y: bottom;
+        background-position-x: center;
+        background-size: cover;
+        overflow: hidden;
+    }
+    
+    #banner #contenido {
+        padding-top: var(--padding-top);
+        width: 100%;
+        min-height: 35vh;
+        backdrop-filter: blur(3px);
+        background-color: rgba(0, 0, 0, 20%);
+        padding-right: var(--padding-right);
+        padding-left: var(--padding-left);
+    }
+    
+    #banner h1 {
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+    
+    #banner p {
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+    
+    #banner button {
+        margin-top: 6vh;
+        width: 211px;
+        height: 47px;
+        padding: 5px;
+        vertical-align: middle;
+        text-align: center;
+        color: black;
+        font-size: 1.2rem;
+    }
+    
+    #destacados {
+        display: flex;
+        flex-direction: column;
+        padding-left: var(--padding-left);
+        padding-right: var(--padding-right);
+        overflow: hidden;
+    }
+    
+    #destacados article {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        grid-template-areas: "picture" "descripcion";
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+        justify-content: center;
+    }
+    
+    #destacados picture {
+        grid-area: picture;
+        display: flex;
+        width: 100%;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #destacados .descripcion {
+        grid-area: descripcion;
+        margin-top: var(--margin-top);
+        width: 100%;
+        justify-self: center;
+    }
+    
+    #destacados .descripcion h2 {
+        color: black;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        font-size: 2.5rem;
+        line-height: 54px;
+        text-transform: uppercase;
+    }
+    
+    #destacados .descripcion p {
+        color: black;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 28px;
+    }
+    
+    #destacados .hr {
+        border: 0;
+        border-top: 3px #FF3333 solid;
+        color: #FF3333;
+        margin-top: 28px;
+        margin-bottom: 28px;
+        width: 95%;
+    }
+    
+    #destacados button {
+        width: 292px;
+        height: 65px;
+        background: #30343F;
+        font-size: 1.5rem;
+        color: #FFFFFF;
+    }
+    
+    #destacados img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+    
+    .ultimos {
+        margin-top: 6vh;
+        padding-left: var(--padding-left);
+        padding-right: var(--padding-right);
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+    }
+    /********************************************* RESPONSIVE *********************************************/
+    
+    @media only screen and (max-width: 450px) {
+        /*mobile*/
+        #destacados article {
+            grid-template-columns: 100%;
+            grid-template-rows: auto auto;
+            grid-template-areas: "picture" "descripcion";
+        }
+    }
+    
+    @media only screen and (min-width: 601px) {
+        /*tablet*/
+        #destacados article {
+            grid-template-columns: 50% 50%;
+        }
+        #destacados article:nth-child(odd) {
+            grid-template-areas: "picture descripcion";
+        }
+        #destacados article:nth-child(even) {
+            grid-template-areas: "descripcion picture";
+        }
+    }
+    
+    @media only screen and (min-width: 800px) {
+        /*escritorio*/
+        @media only screen and (min-width: 1200px) {
+            /*escritorio grande*/
+        }
+    }
