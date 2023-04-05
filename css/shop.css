@@ -45,7 +45,7 @@ aside {
 #shop {
     grid-area: shop;
     display: grid;
-    grid-template-columns: 33% 33% auto;
+    grid-template-columns: 33% 33% 33%;
 }
 
 #shop {
@@ -87,13 +87,12 @@ aside {
 }
 
 #shop article figcaption {
-    width: 100%;
     max-width: 400px;
     padding-left: var(--padding-left);
     padding-right: var(--padding-right);
     text-align: left;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    text-overflow: clip;
+    word-wrap: break-word;
 }
 
 #shop .seccion {

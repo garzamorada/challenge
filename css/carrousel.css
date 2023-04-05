@@ -42,13 +42,12 @@
 }
 
 #carrousel article figcaption {
-    width: 100%;
     max-width: 400px;
     padding-left: var(--padding-left);
     padding-right: var(--padding-right);
     text-align: left;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    text-overflow: clip;
+    word-wrap: break-word;
 }
 
 #carrousel .seccion {
