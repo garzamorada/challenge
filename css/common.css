@@ -62,6 +62,7 @@ header {
     align-content: stretch;
     align-items: stretch;
     justify-items: stretch;
+    justify-content: start;
     padding-left: var(--padding-left);
     padding-right: var(--padding-right);
 }
@@ -254,19 +255,13 @@ main #destacados {
 main #destacados article {
     display: grid;
     gap: 1em;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "picture" "descripcion";
     align-items: center;
     align-content: center;
     justify-items: center;
     justify-content: center;
-}
-
-main #destacados article:nth-child(odd) {
-    grid-template-areas: "picture descripcion";
-}
-
-main #destacados article:nth-child(even) {
-    grid-template-areas: "descripcion picture";
 }
 
 main #destacados picture {
@@ -275,6 +270,7 @@ main #destacados picture {
     width: 100%;
     align-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 main #destacados .descripcion {
@@ -319,9 +315,9 @@ main #destacados button {
 }
 
 main #destacados img {
-    /*max-width: 400px;
-    width: 95%;*/
-    width: var(--clamp-img);
+    /*width: var(--clamp-img);*/
+    width: 100%;
+    max-width: 400px;
     height: auto;
 }
 
@@ -602,11 +598,14 @@ label .botonMenu span:nth-child(3) {
 }
 
 @media only screen and (max-width: 450px) {
-    main #destacados picture {
-        flex: 100%;
+    /*mobile*/
+    html {
+        font-size: 80%;
     }
-    main #destacados .descripcion {
-        flex: 100%;
+    main #destacados article {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        grid-template-areas: "picture" "descripcion";
     }
     #ultimos article {
         flex: 1 0 100%;
@@ -614,14 +613,18 @@ label .botonMenu span:nth-child(3) {
 }
 
 @media only screen and (min-width: 601px) {
+    /*tablet*/
     header {
         grid-template-rows: 120px auto;
     }
-    main #destacados picture {
-        flex: 49%;
+    main #destacados article {
+        grid-template-columns: 50% 50%;
     }
-    main #destacados .descripcion {
-        flex: 49%;
+    main #destacados article:nth-child(odd) {
+        grid-template-areas: "picture descripcion";
+    }
+    main #destacados article:nth-child(even) {
+        grid-template-areas: "descripcion picture";
     }
     #ultimos article {
         flex: 1 0 50%;
@@ -629,8 +632,10 @@ label .botonMenu span:nth-child(3) {
 }
 
 @media only screen and (min-width: 800px) {
+    /*escritorio*/
     header {
         grid-template-rows: 120px 0;
+        justify-content: space-between;
     }
     header #menu {
         grid-area: menu-up;
@@ -656,13 +661,8 @@ label .botonMenu span:nth-child(3) {
 }
 
 @media only screen and (min-width: 1200px) {
+    /*escritorio grande*/
     #ultimos article {
         flex: 1 0 25%;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    html {
-        font-size: 80%;
     }
 }
