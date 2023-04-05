@@ -14,119 +14,156 @@
 </head>
 
 <body>
-    <div id="content">
-        <header>
-            <div id="logotipo">
-                <img alt="logotipo" src="multimedia/branding/logo_light_horizontal.svg">
-            </div>
-            <input type="checkbox" id="switch" chequed>
-            <label for="switch">
+    <header>
+        <div id="logotipo">
+            <a href=""><img alt="logotipo" src="multimedia/branding/logo_light_horizontal.svg"></a>
+        </div>
+        <input type="checkbox" id="switch" chequed>
+        <label for="switch">
                     <div class="botonMenu">             
                        <span></span>              
                        <span></span>              
                        <span></span>              
                     </div>              
                  </label>
-            <nav id="menu">
-                <ul>
-                    <li>SHOP <span class="material-symbols-outlined">expand_more</span></li>
-                    <li>CONTACTO</li>
-                    <li>LOGIN</li>
-                    <li><img id="carrito" alt="carrito" src="multimedia/icons/cart-icon.svg"></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <div id="banner">
-                <div id="contenido">
-                    <h1>Nuevos Ingresos</h1>
-                    <p>Descubrí el próximo Funko Pop de tu colección</p>
-                    <button>SHOP</button>
-                </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="">SHOP <span class="material-symbols-outlined">expand_more</span></a></li>
+                <li><a href="">CONTACTO</a></li>
+                <li><a href="">LOGIN</a></li>
+                <li>
+                    <a href=""><img id="carrito" alt="carrito" src="multimedia/icons/cart-icon.svg"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="banner">
+            <div id="contenido">
+                <h1>Nuevos Ingresos</h1>
+                <p>Descubrí el próximo Funko Pop de tu colección</p>
+                <button onclick="window.location.href='http://google.com';">SHOP</button>
             </div>
-            <section id="destacados">
-                <article class="right">
-                    <picture><img src="multimedia/star-wars/baby-yoda-1.webp"></picture>
-                    <div class="descripcion">
-                        <h2>Star Wars & The Mandalorian</h2>
-                        <p>Disfruta de una saga que sigue agregando personajes a su colección.</p>
-                        <div class="hr"></div>
-                        <button>VER COLECCIÓN</button>
-                    </div>
-                </article>
-                <article class="left">
-                    <picture><img src="multimedia/pokemon/vulpix-1.webp"></picture>
-                    <div class="descripcion">
-                        <h2>POKEMON INDIGO</h2>
-                        <p>Atrapa todos los que puedas y disfruta de una colección llena de amigos.</p>
-                        <div class="hr"></div>
-                        <button>VER COLECCIÓN</button>
-                    </div>
-                </article>
-                <article class="right">
-                    <picture><img src="multimedia/harry-potter/snape-patronus-1.webp"></picture>
-                    <div class="descripcion">
-                        <h2>HARRY POTTER</h2>
-                        <p>Revive los recuerdos de una saga llena de magia y encanto.</p>
-                        <div class="hr"></div>
-                        <button>VER COLECCIÓN</button>
-                    </div>
-                </article>
-            </section>
-            <section id="ultimos">
-                <h1>ÚLTIMOS LANZAMIENTOS</h1>
-                <article>
-                    <figure>
-                        <span class="nuevo">NUEVO</span>
-                        <img src="multimedia/star-wars/trooper-1.webp">
-                        <figcaption>
-                            <span class="seccion">STAR WARS</span>
-                            <h2>STORMTROOPER LIGHTSABER</h2>
-                            <span class="precio">$ 1799,99.-</span>
-                            <span class="cuotas">3 CUOTAS SIN INTERÉS</span>
-                        </figcaption>
-                    </figure>
-                </article>
-                <article>
-                    <figure>
-                        <span class="nuevo">NUEVO</span>
-                        <img src="multimedia/pokemon/pidgeotto-1.webp">
-                        <figcaption>
-                            <span class="seccion">POKEMON</span>
-                            <h2>PIDGEOTTO</h2>
-                            <span class="precio">$ 1799,99.-</span>
-                            <span class="cuotas">3 CUOTAS SIN INTERÉS</span>
-                        </figcaption>
-                    </figure>
-                </article>
-                <article>
-                    <figure>
-                        <span class="nuevo">NUEVO</span>
-                        <img src="multimedia/harry-potter/luna-1.webp">
-                        <figcaption>
-                            <span class="seccion">HARRY POTTER</span>
-                            <h2>LUNA LOVEGOOD LION MASK</h2>
-                            <span class="precio">$ 1799,99.-</span>
-                            <span class="cuotas">3 CUOTAS SIN INTERÉS</span>
-                        </figcaption>
-                    </figure>
-                </article>
-            </section>
-        </main>
-        <footer>
-            <nav>
-                <ul>
-                    <li>SHOP</li>
-                    <li>REGISTRARSE</li>
-                    <li>INGRESAR</li>
-                    <li>CONTACTO</li>
-                </ul>
-            </nav>
-            <div id="isotipo"><img alt="isotipo" src="multimedia/branding/isotype.svg"></div>
-            <div id="copyright">All rights reserved 2022 - Funkoshop &copy;</div>
-        </footer>
-    </div>
-
+        </div>
+        <section id="destacados">
+            <article class="right">
+                <picture><img src="multimedia/star-wars/baby-yoda-1.webp"></picture>
+                <div class="descripcion">
+                    <h2>Star Wars & The Mandalorian</h2>
+                    <p>Disfruta de una saga que sigue agregando personajes a su colección.</p>
+                    <div class="hr"></div>
+                    <button onclick="window.location.href='http://google.com';">VER COLECCIÓN</button>
+                </div>
+            </article>
+            <article class="left">
+                <picture><img src="multimedia/pokemon/vulpix-1.webp"></picture>
+                <div class="descripcion">
+                    <h2>POKEMON INDIGO</h2>
+                    <p>Atrapa todos los que puedas y disfruta de una colección llena de amigos.</p>
+                    <div class="hr"></div>
+                    <button onclick="window.location.href='http://google.com';">VER COLECCIÓN</button>
+                </div>
+            </article>
+            <article class="right">
+                <picture><img src="multimedia/harry-potter/snape-patronus-1.webp"></picture>
+                <div class="descripcion">
+                    <h2>HARRY POTTER</h2>
+                    <p>Revive los recuerdos de una saga llena de magia y encanto.</p>
+                    <div class="hr"></div>
+                    <button onclick="window.location.href='http://google.com';">VER COLECCIÓN</button>
+                </div>
+            </article>
+        </section>
+        <h1 class="ultimos">ÚLTIMOS LANZAMIENTOS</h1>
+        <section id="ultimos">
+            <article class="diapositiva" style="order:1;">
+                <span class="nuevo">NUEVO 1</span>
+                <figure>
+                    <img src="multimedia/star-wars/trooper-1.webp">
+                    <figcaption>
+                        <span class="seccion">STAR WARS</span>
+                        <h2><a href="">STORMTROOPER LIGHTSABER</a></h2>
+                        <span class="precio">$ 1799,99.-</span>
+                        <span class="cuotas">3 CUOTAS SIN INTERÉS</span>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="diapositiva" style="order:2;">
+                <span class="nuevo">NUEVO 2</span>
+                <figure>
+                    <img src="multimedia/pokemon/pidgeotto-1.webp">
+                    <figcaption>
+                        <span class="seccion">POKEMON</span>
+                        <h2><a href="">PIDGEOTTO</a></h2>
+                        <span class="precio">$ 1799,99.-</span>
+                        <span class="cuotas">3 CUOTAS SIN INTERÉS</span>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="diapositiva" style="order:3;">
+                <span class="nuevo">NUEVO 3</span>
+                <figure>
+                    <img src="multimedia/harry-potter/luna-1.webp">
+                    <figcaption>
+                        <span class="seccion">HARRY POTTER</span>
+                        <h2><a href="">LUNA LOVEGOOD LION MASK</a></h2>
+                        <span class="precio">$ 1799,99.-</span>
+                        <span class="cuotas">3 CUOTAS SIN INTERÉS</span>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="diapositiva" style="order:4;">
+                <span class="nuevo">NUEVO 4</span>
+                <figure>
+                    <img src="multimedia/star-wars/trooper-1.webp">
+                    <figcaption>
+                        <span class="seccion">STAR WARS</span>
+                        <h2><a href="">STORMTROOPER LIGHTSABER</a></h2>
+                        <span class="precio">$ 1799,99.-</span>
+                        <span class="cuotas">3 CUOTAS SIN INTERÉS</span>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="diapositiva" style="order:5;">
+                <span class="nuevo">NUEVO 5</span>
+                <figure>
+                    <img src="multimedia/pokemon/pidgeotto-1.webp">
+                    <figcaption>
+                        <span class="seccion">POKEMON</span>
+                        <h2><a href="">PIDGEOTTO</a></h2>
+                        <span class="precio">$ 1799,99.-</span>
+                        <span class="cuotas">3 CUOTAS SIN INTERÉS</span>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="diapositiva" style="order:6;">
+                <span class="nuevo">NUEVO 6</span>
+                <figure>
+                    <img src="multimedia/harry-potter/luna-1.webp">
+                    <figcaption>
+                        <span class="seccion">HARRY POTTER</span>
+                        <h2><a href="">LUNA LOVEGOOD LION MASK</a></h2>
+                        <span class="precio">$ 1799,99.-</span>
+                        <span class="cuotas">3 CUOTAS SIN INTERÉS</span>
+                    </figcaption>
+                </figure>
+            </article>
+        </section>
+        <div id="control_carrousel"><button onclick="izquierda();">◄</button><button onclick="derecha();">►</button></div>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href=" ">SHOP</a></li>
+                <li><a href=" ">REGISTRARSE</a></li>
+                <li><a href=" ">INGRESAR</a></li>
+                <li><a href=" ">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <div id="isotipo "><img alt="isotipo " src="multimedia/branding/isotype.svg "></div>
+        <div id="copyright ">All rights reserved 2022 - Funkoshop &copy;</div>
+    </footer>
 </body>
+<script src="js/carrousel.js"></script>
 
 </html>
