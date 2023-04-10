@@ -41,7 +41,22 @@
     </header>
     <main>
         <aside>
-            contenido
+            <form id="buscar">
+                <label for="keywords">BUSCAR</label>
+                <input type="text" name="keywords" placeholder="ítem o categoría">
+                <label for="sort">ORDENAR POR</label>
+                <select name="sort">
+                    <option value="menor">Menor a mayor</option>
+                    <option value="mayor">Mayor a menor</option>
+                </select>
+                <label for="">PRECIO</label>
+                <label for="nuevos" class="range">MIN <input type="number" name="min"></label><label for="max" class="range"> - MAX <input type="number" name="max"></label>
+                <label for="">FILTRAR</label>
+                <label for="nuevos" class="checkbox"><input type="checkbox" name="nuevos" value="nuevos"> NUEVOS</label>
+                <label for="ofertas" class="checkbox"><input type="checkbox" name="ofertas" value="ofertas"> OFERTAS</label>
+                <label for="especial" class="checkbox"><input type="checkbox" name="especial" value="especial"> EDICIÓN ESPECIAL</label>
+                <label for="favoritos" class="checkbox"><input type="checkbox" name="favoritos" value="favoritos"> FAVORITOS</label>
+            </form>
         </aside>
         <section id="shop">
             <article class="shop-item">
