@@ -1,7 +1,7 @@
 main {
     display: grid;
-    grid-template-areas: "aside shop" ". control";
-    grid-template-columns: 30% 70%;
+    grid-template-areas: "aside" "shop" "control";
+    grid-template-rows: auto auto auto;
 }
 
 aside {
@@ -45,7 +45,7 @@ aside {
 #shop {
     grid-area: shop;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 100%;
 }
 
 #shop {
@@ -61,7 +61,6 @@ aside {
 }
 
 #shop article {
-    flex: 1 0 100%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -129,19 +128,22 @@ aside {
 /************************* SIDEBAR *************************/
 
 #buscar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     color: #111111;
-    margin-left: var(--margin-left);
-    margin-right: var(--margin-right);
+    margin-left: calc(var(--margin-left));
+    margin-right: calc(var(--margin-right)/2);
     margin-top: 40px;
 }
 
 #buscar input,
 #buscar select {
-    font-size: 1em;
+    font-size: 0.8em;
     font-family: inherit;
-    color: #B9B9B9;
+    color: #111111;
     background-color: #FFFFFF;
     border: black 1px solid;
     margin-bottom: 5px;
@@ -150,15 +152,16 @@ aside {
 }
 
 #buscar select {
-    width: 260px;
+    width: min(260px, calc(90% + 20px));
 }
 
 #buscar input {
-    width: 240px;
+    width: min(240px, 90%);
 }
 
 #buscar input::placeholder {
     color: #B9B9B9;
+    font-size: 1em;
 }
 
 #buscar label {
@@ -168,25 +171,32 @@ aside {
     margin-top: 5px;
     font-size: 1em;
     align-items: center;
+    min-width: 45%;
 }
 
 #buscar .range {
-    display: inline-flex;
-    font-size: 0.75em;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8em;
     justify-items: left;
     align-items: center;
 }
 
+#buscar .range label {
+    min-width: 25%;
+}
+
 #buscar .checkbox {
+    font-size: 0.8em;
     display: flex;
     justify-items: left;
     align-items: center;
     justify-content: flex-start;
-    font-size: 16px;
+    min-width: 90%;
 }
 
 #buscar .range input {
-    width: 60px;
+    width: min(60px, 3vw);
     padding: 5px;
     text-align: center;
     margin-left: 20px;
@@ -194,9 +204,74 @@ aside {
 }
 
 #buscar .checkbox input {
-    width: 24px;
-    height: 24px;
-    margin-right: 20px;
-    margin-left: 20px;
+    --size-checkbox: clamp(15px, 1.5vw, 24px);
+    width: var(--size-checkbox);
+    height: var(--size-checkbox);
+    margin-right: 10px;
+    margin-left: 10px;
     text-align: left;
+}
+
+
+/********************************************* RESPONSIVE *********************************************/
+
+@media only screen and (max-width: 450px) {
+    /*mobile*/
+    #buscar {
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+        display: grid;
+        grid-template-areas: "aside" "shop" "control";
+        grid-template-rows: auto auto auto;
+    }
+    aside {
+        grid-area: aside;
+    }
+    #shop {
+        grid-template-columns: 100%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    /*tablet*/
+    #shop {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    /*escritorio*/
+    #shop {
+        grid-template-columns: 50% 50%;
+    }
+    #buscar {
+        display: flex;
+        flex-direction: row;
+    }
+    main {
+        display: grid;
+        grid-template-areas: "aside shop" ". control";
+        grid-template-columns: 30% 70%;
+    }
+    aside {
+        grid-area: aside;
+    }
+    #buscar label {
+        min-width: 90%;
+    }
+    #buscar .range label {
+        min-width: 45%;
+    }
+    #buscar .checkbox {
+        min-width: 90%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    /*escritorio grande*/
+    #shop {
+        grid-template-columns: 33% 33% 33%;
+    }
 }
